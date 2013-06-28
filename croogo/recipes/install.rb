@@ -4,9 +4,10 @@ node[:deploy].each do |application, deploy|
     next
   end
 
-  directory "#{deploy[:deploy_to]}/current/tmp" do
-	mode 0777
-	recursive true
+  execute 'write permission to tmp folder' do
+	action :run
+	user 'root'
+	command "chmod 777 -R #{deploy[:deploy_to]}/current/tmp"
   end
 
   execute 'make croogo' do
