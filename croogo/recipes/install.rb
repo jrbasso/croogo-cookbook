@@ -6,6 +6,7 @@ node[:deploy].each do |application, deploy|
 
   directory "#{deploy[:deploy_to]}/current/tmp" do
 	mode 0777
+	recursive true
   end
 
   execute 'make croogo' do
