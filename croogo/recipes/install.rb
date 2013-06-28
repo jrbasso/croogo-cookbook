@@ -7,7 +7,7 @@ node[:deploy].each do |application, deploy|
   execute 'install croogo submodules' do
 	action :run
 	user deploy[:user]
-	command 'git submodule update --init'
+	command "cd #{deploy[:deploy_to]} && git submodule update --init"
   end
 
   execute 'make croogo' do
