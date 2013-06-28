@@ -7,6 +7,6 @@ node[:deploy].each do |application, deploy|
   execute 'make croogo' do
 	action :run
 	user deploy[:user]
-	command "#{deploy[:deploy_to]}/current/Console/cake croogo make"
+	command "cd #{deploy[:deploy_to]}/current && ./Console/cake croogo make"
   end
 end
