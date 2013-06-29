@@ -1,6 +1,10 @@
 include_attribute 'deploy'
 
 default[:croogo][:database][:datasource] = 'Database/Mysql'
+default[:croogo][:database][:host] = '127.0.0.1'
+default[:croogo][:database][:username] = 'root'
+default[:croogo][:database][:password] = 'root'
+default[:croogo][:database][:database] = 'croogo'
 default[:croogo][:database][:prefix] = ''
 default[:croogo][:database][:encoding] = 'utf8'
 default[:croogo][:database][:port] = 3306
