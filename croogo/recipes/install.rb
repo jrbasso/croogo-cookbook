@@ -20,7 +20,6 @@ node[:deploy].each do |application, deploy|
 	template "#{deploy[:deploy_to]}/current/Config/#{file}" do
 	  source "#{file}.erb"
 	  mode 0644
-	  user deploy[:user]
 	  group deploy[:group]
 	  only_if do
 		File.directory?("#{deploy[:deploy_to]}/current")
