@@ -19,6 +19,8 @@ node[:deploy].each do |application, deploy|
   %w(croogo.php database.php settings.json).each do |file|
 	template "#{deploy[:deploy_to]}/current/Config/#{file}" do
 	  source "#{file}.erb"
+	  mode 0644
+	  user deploy[:user]
 	  group deploy[:group]
 	  only_if do
 		File.directory?("#{deploy[:deploy_to]}/current")
