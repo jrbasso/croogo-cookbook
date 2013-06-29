@@ -15,4 +15,18 @@ node[:deploy].each do |application, deploy|
 	user deploy[:user]
 	command "cd #{deploy[:deploy_to]}/current && ./Console/cake croogo make"
   end
+
+  %w(croogo.php database.php settings.json).each do |file|
+	template "#{deploy[:deploy_to]}/current/Config/#{file}" do
+	  source "#{file}.erb"
+	  group deploy[:group]
+	  only_if do
+		File.directory?("#{deploy[:deploy_to]}/current")
+	  end
+	end
+
+	file "#{deploy[:deploy_to]}/current/Config/#{file}.install" do
+	  action :delete
+	end
+  end
 end

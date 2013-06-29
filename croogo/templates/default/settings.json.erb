@@ -1,0 +1,46 @@
+
+{
+	"Site": {
+		"acl_plugin": "Acl",
+		"email": "<%= node[:croogo][:site][:email] %>",
+		"feed_url": "",
+		"locale": "eng",
+		"status": 1,
+		"tagline": "<%= node[:croogo][:site][:tagline] %>",
+		"theme": "",
+		"timezone": 0,
+		"title": "<%= node[:croogo][:site][:title] %>"
+	},
+	"Hook": {
+		"bootstraps": "Settings,Comments,Contacts,Nodes,Meta,Menus,Users,Blocks,Taxonomy,FileManager,Wysiwyg,Ckeditor"
+	},
+	"Comment": {
+		"date_time_format": "M d, Y",
+		"email_notification": 1,
+		"feed_limit": 10,
+		"level": 1
+	},
+	"Meta": {
+		"description": "<%= node[:croogo][:meta][:description] %>",
+		"generator": "<%= node[:croogo][:meta][:generator] %>",
+		"keywords": "<%= node[:croogo][:meta][:keywords] %>",
+		"robots": "index, follow"
+	},
+	"Reading": {
+		"date_time_format": "D, M d Y H:i:s",
+		"nodes_per_page": 5
+	},
+	"Service": {
+		"akismet_key": "<%= node[:croogo][:askimet][:key] %>",
+		"akismet_url": "<%= node[:croogo][:askimet][:url] %>",
+		"recaptcha_private_key": "<%= node[:croogo][:recaptcha][:private_key] %>",
+		"recaptcha_public_key": "<%= node[:croogo][:recaptcha][:public_key] %>"
+	},
+	"Writing": {
+		"wysiwyg": 1
+	},
+	"Access Control": {
+		"multiRole" : 0,
+		"rowLevel": 0
+	}
+}
