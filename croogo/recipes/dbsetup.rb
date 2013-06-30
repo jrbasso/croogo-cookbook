@@ -20,7 +20,7 @@ node[:deploy].each do |application, deploy|
   end
 
   execute "mark croogo as installed" do
-    command "/usr/bin/mysql -u#{node[:croogo][:database][:username]} -p#{node[:croogo][:database][:password]} #{node[:croogo][:database][:database]} -e 'INSERT IGNORE INTO `settings` (`id`, `key`, `value`, `title`, `description`, `input_type`, `editable`, `weight`, `params`) VALUES (0, \'Croogo.installed\', \'1\', \'\', \'\', \'\', 1, 1, \'\')'"
+    command "/usr/bin/mysql -u#{node[:croogo][:database][:username]} -p#{node[:croogo][:database][:password]} #{node[:croogo][:database][:database]} -e 'INSERT IGNORE INTO `settings` (`id`, `key`, `value`, `title`, `description`, `input_type`, `editable`, `weight`, `params`) VALUES (0, \'Croogo.installed\', \'1\', \'\', \'\', \'\', 1, 1, \'\')"
     action :run
   end
 
