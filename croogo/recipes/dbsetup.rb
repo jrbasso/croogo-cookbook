@@ -15,7 +15,7 @@ node[:deploy].each do |application, deploy|
   end
 
   execute "create mysql session table" do
-    command "/usr/bin/mysql -u#{node[:croogo][:database][:username]} -p#{node[:croogo][:database][:password]} #{node[:croogo][:database][:database]} -e 'CREATE TABLE IF NOT EXISTS cake_sessions (id varchar(255) NOT NULL default \'\', data text, expires int(11) default NULL, PRIMARY KEY  (id));'"
+    command "/usr/bin/mysql -u#{node[:croogo][:database][:username]} -p#{node[:croogo][:database][:password]} #{node[:croogo][:database][:database]} -e 'CREATE TABLE IF NOT EXISTS cake_sessions (id varchar(255) NOT NULL, data text, expires int(11) default NULL, PRIMARY KEY (id))'"
     action :run
   end
 
