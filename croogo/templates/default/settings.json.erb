@@ -1,4 +1,3 @@
-
 {
 	"Site": {
 		"acl_plugin": "Acl",
@@ -14,11 +13,21 @@
 	"Hook": {
 		"bootstraps": "Settings,Comments,Contacts,Nodes,Meta,Menus,Users,Blocks,Taxonomy,FileManager,Wysiwyg,Ckeditor"
 	},
+	"Access Control": {
+		"autoLoginDuration": "+1 week",
+		"models": "",
+		"multiRole": 0,
+		"rowLevel": 0
+	},
 	"Comment": {
 		"date_time_format": "M d, Y",
 		"email_notification": 1,
 		"feed_limit": 10,
 		"level": 1
+	},
+	"Croogo": {
+		"installed": 1,
+		"version": "1.5.3"
 	},
 	"Meta": {
 		"description": "<%= node[:croogo][:meta][:description] %>",
@@ -38,12 +47,5 @@
 	},
 	"Writing": {
 		"wysiwyg": 1
-	},
-	"Access Control": {
-		"multiRole" : 0,
-		"rowLevel": 0
-	},
-	"Croogo": {
-		"installed": 1
 	}
 }
